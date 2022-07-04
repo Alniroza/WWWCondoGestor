@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "name": "wwwcondogestor",
+  "version": "1.0.0",
+  "description": "App gestora de condominios",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JS",
+    "GraphQL"
+  ],
+  "author": "Lynx",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.8.2",
+    "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.5.0",
+    "graphql-modules": "^2.0.0",
+    "graphql-tools": "^8.2.12",
+    "mongoose": "^6.3.6",
+    "nodemon": "^2.0.16"
+  }
+}
