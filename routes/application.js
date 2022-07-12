@@ -7,6 +7,7 @@ import { SuperUserModule } from "./superuser/superuser.module.js";
 import { TransactionModule } from  "./transaction/transaction.module.js"
 import { CommonFundModule } from "./commonfund/commonfund.module.js"
 import { CondominiumModule } from "./condominium/condominium.module.js";
+import { HelperModule } from "../common/helpers/helper.module.js";
 
 export const application = createApplication({
   modules: [
@@ -15,7 +16,7 @@ export const application = createApplication({
     SuperUserModule,
     TransactionModule,
     CommonFundModule,
-    CondominiumModule
-
+    CondominiumModule,
+    HelperModule
   ]
 })

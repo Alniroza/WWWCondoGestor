@@ -1,20 +1,34 @@
 import mongoose from 'mongoose';
 
 const CommonFundSchema = new mongoose.Schema({
-  houseId: {
+  condominiumId: {
     type: mongoose.Types.ObjectId,
     required: true
   },
-  amount: {
+  name: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String
+  },
+  period: {
+    type: String,
+    required: true
+  },
+  minPeriod: {
+    type: String,
+    required: true
+  },
+  periodFee: {
     type: Number,
     required: true
   },
-  detail: {
-    type: String
-  },
-  expirationDays: {
+  fineFee: {
     type: Number
   }
-});
+}
+
+);
 
 export const CommonFundModel = mongoose.model('CommonFund', CommonFundSchema);
