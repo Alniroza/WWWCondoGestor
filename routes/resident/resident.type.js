@@ -19,7 +19,7 @@ export const ResidentType = gql(
   type Query {
     findOneResident(_id: ID!): Resident
     findAllResident: [Resident]
-    findResidentbyUsername(username: String): Resident
+    findResidentByUsername(username: String): Resident
     authResident(username: String, password: String): Boolean
   }
 
