@@ -5,18 +5,22 @@ export const ResidentType = gql(
     _id: ID!
     name: String,
     username: String!,
-    password: String!
+    password: String!,
+    email: String!
   }
 
   input ResidentInput {
     name: String,
     username: String,
-    password: String
+    password: String,
+    email: String
   } 
 
   type Query {
     findOneResident(_id: ID!): Resident
-    findAllResident: [Resident]  
+    findAllResident: [Resident]
+    findResidentbyUsername(username: String): Resident
+    authResident(username: String, password: String): Boolean
   }
 
   type Mutation {

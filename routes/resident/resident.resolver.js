@@ -11,11 +11,25 @@ const Query = {
   async findAllResident(){
     const result = await ResidentModel.find({});
     return result
+  },
+  async authResident(_, args){
+    let { username, password } = args;
+    const result = await ResidentModel.findOne({ username: username });
+    if (result["password"] === password ){
+      return true;
+    }
+    return false;
+  },
+  async findResidentByUsername(_, args){
+    let { username } = args;
+    const result = await ResidentModel.findOne({ username: username});
+    return result;
   }
 };
 
 const Mutation = {
   async addResident(_, args){
+    //TODO: Revisar si resident existe o no
     let { input } = args;
     const result = await ResidentModel.create(input);
     console.log(result);
