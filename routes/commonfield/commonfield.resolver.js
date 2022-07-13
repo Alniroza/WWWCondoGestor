@@ -1,40 +1,40 @@
 import mongoose from 'mongoose';
-import { CommonFieldModel } from './commonfield.model.js'
+import { CommonfieldModel } from './Commonfield.model.js'
 
 const Query = {
-  async findOneCommonField(_, args){
+  async findOneCommonfield(_, args){
     let { _id } = args;
-    const result = await CommonFieldModel.findOne({_id: mongoose.Types.ObjectId(_id)});
+    const result = await CommonfieldModel.findOne({_id: mongoose.Types.ObjectId(_id)});
     console.log(result);
     return result;
   },
-  async findAllCommonField(){
-    const result = await CommonFieldModel.find({});
+  async findAllCommonfield(){
+    const result = await CommonfieldModel.find({});
     return result
   }
 }
 
 const Mutation = {
-  async addCommonField(_, args){
+  async addCommonfield(_, args){
     let { input } = args;
-    const result = await CommonFieldModel.create(input);
+    const result = await CommonfieldModel.create(input);
     console.log(result);
     return result;
   },
-  async updateCommonField(_, args){
+  async updateCommonfield(_, args){
     let { _id, input } = args;
-    const result = await CommonFieldModel.findOneAndUpdate({_id: mongoose.Types.ObjectId(_id)}, input);
+    const result = await CommonfieldModel.findOneAndUpdate({_id: mongoose.Types.ObjectId(_id)}, input);
     return result;
   },
-  async deleteCommonField(_, args){
+  async deleteCommonfield(_, args){
     let { _id } = args;
     console.log(_id)
-    const result = await CommonFieldModel.findOneAndRemove({_id: mongoose.Types.ObjectId(_id)});
+    const result = await CommonfieldModel.findOneAndRemove({_id: mongoose.Types.ObjectId(_id)});
     return result;
   }
 }
 
-export const CommonFieldResolver = {
+export const CommonfieldResolver = {
   Query: Query,
   Mutation: Mutation
 }

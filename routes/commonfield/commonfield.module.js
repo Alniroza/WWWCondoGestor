@@ -1,10 +1,10 @@
 import { createModule } from "graphql-modules"
 
-import { CommonFieldResolver } from "./commonfield.resolver.js"
-import { CommonFieldType } from "./commonfield.type.js"
+import { CommonfieldResolver } from "./Commonfield.resolver.js"
+import { CommonfieldType } from "./Commonfield.type.js"
 
-export const CommonFieldModule = createModule({
-  id: 'CommonFieldModule',
-  typeDefs: [CommonFieldType],
-  resolvers: [CommonFieldResolver]
+export const CommonfieldModule = createModule({
+  id: 'CommonfieldModule',
+  typeDefs: [CommonfieldType],
+  resolvers: [CommonfieldResolver]
 });

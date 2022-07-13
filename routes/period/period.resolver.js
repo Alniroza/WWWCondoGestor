@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { PeriodModel } from './period.model.js'
-import { ReserveModel } from './reserve.model.js'
+import { ReserveModel } from '../reserve/reserve.model.js'
 
 const Query = {
   async findOnePeriod(_, args){

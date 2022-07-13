@@ -20,4 +20,4 @@ const ReserveSchema = new mongoose.Schema(
   }
 );
 
-export const ReserveModel = mongoose.model("Reserve", ReserveSchema);
+export const ReserveModel = mongoose.models.Reserve || mongoose.model("Reserve", ReserveSchema);

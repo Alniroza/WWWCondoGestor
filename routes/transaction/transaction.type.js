@@ -3,7 +3,7 @@ import { gql } from "graphql-modules";
 export const TransactionType = gql(
   `type Transaction {
     _id: ID!
-    house_id: ID!,
+    houseId: ID!,
     reason: String!
     amount: Float!,
     payedAmount: Float!,
@@ -13,7 +13,7 @@ export const TransactionType = gql(
   }
 
   input TransactionInput {
-    house_id: ID,
+    houseId: ID,
     reason: String!
     amount: Float!,
     payedAmount: Float!,

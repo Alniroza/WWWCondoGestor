@@ -1,34 +1,34 @@
 import { gql } from "graphql-modules";
 
-export const CommonFieldType = gql(
-  `type CommonField {
+export const CommonfieldType = gql(
+  `type Commonfield {
     _id: ID!,
     condominiumId: ID!,
     name: String,
     description: String,
     period: String,
-    periodFee: Number,
-    fineFee:  Number
+    periodFee: Int,
+    fineFee:  Int
   }
 
-  input CommonFieldInput {
+  input CommonfieldInput {
     condominiumId: ID!,
     name: String,
     description: String,
     period: String,
-    periodFee: Number,
-    fineFee:  Number
+    periodFee: Int,
+    fineFee:  Int
   } 
 
   type Query {
-    findOneCommonField(_id: ID!): CommonField
-    findAllCommonField: [CommonField]  
-    findAllCommonFieldByHouseID(house_id: ID!): [CommonField]
+    findOneCommonfield(_id: ID!): Commonfield
+    findAllCommonfield: [Commonfield]  
+    findAllCommonfieldByHouseID(house_id: ID!): [Commonfield]
   }
 
   type Mutation {
-    addCommonField(input: CommonFieldInput!): CommonField
-    updateCommonField(_id: ID!, input: CommonFieldInput!): CommonField
-    deleteCommonField(_id: ID!): CommonField
+    addCommonfield(input: CommonfieldInput!): Commonfield
+    updateCommonfield(_id: ID!, input: CommonfieldInput!): Commonfield
+    deleteCommonfield(_id: ID!): Commonfield
   }`
 );

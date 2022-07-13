@@ -9,16 +9,20 @@ import { CommonfundModule } from "./commonfund/commonfund.module.js"
 import { CondominiumModule } from "./condominium/condominium.module.js";
 import { HelperModule } from "../common/helpers/helper.module.js";
 import { ReserveModule } from "./reserve/reserve.module.js";
+import { CommonfieldModule } from "./commonfield/commonfield.module.js";
+import { PeriodModule } from "./period/period.module.js";
 
 export const application = createApplication({
   modules: [
-    ResidentModule, 
-    HouseModule, 
     SuperUserModule,
-    TransactionModule,
-    CommonfundModule,
     CondominiumModule,
+    HouseModule, 
+    CommonfieldModule,
+    CommonfundModule,
+    TransactionModule,
+    ResidentModule, 
     HelperModule,
-    ReserveModule
+    ReserveModule,
+    PeriodModule
   ]
 })
