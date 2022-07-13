@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
 const HouseSchema = new mongoose.Schema({
-  condominium_id: {
+  condominiumId: {
     type: mongoose.Types.ObjectId,
     required: true
   },
-  residents_id: [{
+  residentsId: [{
     type: mongoose.Types.ObjectId,
     required: false
   }],

@@ -4,16 +4,22 @@ export const TransactionType = gql(
   `type Transaction {
     _id: ID!
     house_id: ID!,
+    reason: String!
     amount: Float!,
-    payed_amount: Float!,
+    payedAmount: Float!,
     detail: String,
-    expirationTimestamp: Float
+    expirationDate: Date
+    createdAt: Date
   }
 
   input TransactionInput {
-    name: String,
-    username: String,
-    password: String
+    house_id: ID,
+    reason: String!
+    amount: Float!,
+    payedAmount: Float!,
+    detail: String,
+    expirationDate: Date
+    createdAt: Date
   } 
 
   type Query {
@@ -25,5 +31,6 @@ export const TransactionType = gql(
     addTransaction(input: TransactionInput!): Transaction
     updateTransaction(_id: ID!, input: TransactionInput!): Transaction
     deleteTransaction(_id: ID!): Transaction
+    payTransaction(transactionId: ID!, payedAmount: Int): Transaction
   }`
 );

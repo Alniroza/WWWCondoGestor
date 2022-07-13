@@ -1,7 +1,7 @@
 import { gql } from "graphql-modules";
 
-export const CommonFundType = gql(
-  `type CommonFund {
+export const CommonfundType = gql(
+  `type Commonfund {
     _id: ID!
     houseId: ID!,
     amount: Int!,
@@ -9,21 +9,22 @@ export const CommonFundType = gql(
     expirationDays: Int,
   }
 
-  input CommonFundInput {
+  input CommonfundInput {
     houseId: ID!,
     amount: Int!,
     detail: String,
-    expirationDays: Int,
+    expirationDays: Int
+  }
 
   type Query {
-    findOneCommonFund(_id: ID!): CommonFund
-    findAllCommonFund: [CommonFund]  
-    findAllCommonFundByHouseID(house_id: ID!): [CommonFund]
+    findOneCommonfund(_id: ID!): Commonfund
+    findAllCommonfund: [Commonfund]  
+    findAllCommonfundByHouseID(houseId: ID!): [Commonfund]
   }
 
   type Mutation {
-    addCommonFund(input: CommonFundInput!): CommonFund
-    updateCommonFund(_id: ID!, input: CommonFundInput!): CommonFund
-    deleteCommonFund(_id: ID!): CommonFund
+    addCommonfund(input: CommonfundInput!): Commonfund
+    updateCommonfund(_id: ID!, input: CommonfundInput!): Commonfund
+    deleteCommonfund(_id: ID!): Commonfund
   }`
 );

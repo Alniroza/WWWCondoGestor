@@ -16,16 +16,15 @@ const CommonFundSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  minPeriod: {
-    type: String,
-    required: true
-  },
   periodFee: {
     type: Number,
     required: true
   },
   fineFee: {
     type: Number
+  },
+  finePeriod: {
+    type: String,
   }
 }
 

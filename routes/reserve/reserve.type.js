@@ -3,11 +3,10 @@ import { gql } from "graphql-modules";
 export const ReserveType = gql(
   `type Reserve {
     _id: ID!
-    house_id: ID!,
-    amount: Float!,
-    payed_amount: Float!,
-    detail: String,
-    expirationTimestamp: Int
+    houseId: ID!,
+    commonfundId: ID!,
+    payed: Boolean
+    date: Date
   }
 
   input ReserveInput {

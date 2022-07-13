@@ -1,10 +1,10 @@
 import { createModule } from "graphql-modules"
 
-import { CommonFundResolver } from "./commonfund.resolver.js"
-import { CommonFundType } from "./commonfund.type.js"
+import { CommonfundResolver } from "./Commonfund.resolver.js"
+import { CommonfundType } from "./Commonfund.type.js"
 
-export const CommonFundModule = createModule({
-  id: 'CommonFundModule',
-  typeDefs: [CommonFundType],
-  resolvers: [CommonFundResolver]
+export const CommonfundModule = createModule({
+  id: 'CommonfundModule',
+  typeDefs: [CommonfundType],
+  resolvers: [CommonfundResolver]
 });

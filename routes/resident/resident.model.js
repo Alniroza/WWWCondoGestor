@@ -14,6 +14,9 @@ const ResidentSchema = new mongoose.Schema(
       type: String,
       required: true
     },
+    email: {
+      type: String
+    }
   },
   { 
     versionKey: false 

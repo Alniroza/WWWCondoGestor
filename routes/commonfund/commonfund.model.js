@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const CommonFundSchema = new mongoose.Schema({
+const CommonfundSchema = new mongoose.Schema({
   houseId: {
     type: mongoose.Types.ObjectId,
     required: true
@@ -17,4 +17,4 @@ const CommonFundSchema = new mongoose.Schema({
   }
 });
 
-export const CommonFundModel = mongoose.model('CommonFund', CommonFundSchema);
+export const CommonfundModel = mongoose.model('Commonfund', CommonfundSchema);

@@ -11,6 +11,11 @@ const Query = {
   async findAllHouse(){
     const result = await HouseModel.find({});
     return result
+  },
+  async findAllHousesByResident(_, args){
+    let { residentId } = args;
+    const result = await HouseModel.find({ residentsId: residentId })
+    return result;
   }
 }
 
@@ -29,6 +34,11 @@ const Mutation = {
   async deleteHouse(_, args){
     let { _id } = args;
     const result = await HouseModel.findByIdAndRemove(moongose.Types.ObjectId(_id));
+    return result;
+  },
+  async addResidentToHouse(_, args){
+    let {houseId, residentId} = args;
+    const result = await HouseModel.findOneAndUpdate({_id: mongoose.Types.ObjectId(houseId)}, { $push: {residentsId: residentId}});
     return result;
   }
 }

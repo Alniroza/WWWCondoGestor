@@ -1,15 +1,20 @@
 import mongoose from 'mongoose';
 
 const TransactionSchema = new mongoose.Schema({
-  house_id: {
+  houseId: {
     type: mongoose.Types.ObjectId,
+    required: true,
+    ref: "House"
+  },
+  reason: {
+    type: String,
     required: true
   },
   amount: {
     type: Number,
     required: true
   },
-  payed_amout: {
+  payedAmount: {
     type: Number,
     required: true
   },
@@ -19,6 +24,10 @@ const TransactionSchema = new mongoose.Schema({
   expirationDate: {
     type: Date
   }
-});
+},
+{
+  timestamps: true
+}
+);
 
 export const TransactionModel = mongoose.model('Transaction', TransactionSchema);

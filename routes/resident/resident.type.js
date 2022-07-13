@@ -6,7 +6,7 @@ export const ResidentType = gql(
     name: String,
     username: String!,
     password: String!,
-    email: String!
+    email: String
   }
 
   input ResidentInput {
