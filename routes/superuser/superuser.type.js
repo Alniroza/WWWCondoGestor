@@ -17,11 +17,14 @@ export const SuperUserType = gql(
   type Query {
     findOneSuperUser(_id: ID!): SuperUser
     findAllSuperUser: [SuperUser]  
+    findSuperUserByUsername(username: String): SuperUser
+    authSuperUser(username: String!, password: String!): Boolean
   }
 
   type Mutation {
     addSuperUser(input: SuperUserInput!): SuperUser
     updateSuperUser(_id: ID!, input: SuperUserInput!): SuperUser
     deleteSuperUser(_id: ID!): SuperUser
+    
   }`
 );

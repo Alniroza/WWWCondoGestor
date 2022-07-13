@@ -30,4 +30,4 @@ const CommonfieldSchema = new mongoose.Schema({
 
 );
 
-export const CommonfieldModel = mongoose.model('Commonfield', CommonfieldSchema);
+export const CommonfieldModel = mongoose.models.Commonfield || mongoose.model('Commonfield', CommonfieldSchema);

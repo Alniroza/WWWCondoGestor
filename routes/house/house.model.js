@@ -15,4 +15,4 @@ const HouseSchema = new mongoose.Schema({
   }
 });
 
-export const HouseModel = mongoose.model('House', HouseSchema);
+export const HouseModel = mongoose.models.House || mongoose.model('House', HouseSchema);

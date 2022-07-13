@@ -12,6 +12,19 @@ export const SuperUserResolver = {
     async findAllSuperUser(){
       const result = await SuperUserModel.find({});
       return result
+    },
+    async authSuperUser(_, args){
+      let { username, password } = args;
+      const result = await SuperUserModel.findOne({ username: username });
+      if (result["password"] === password ){
+        return true;
+      }
+      return false;
+    },
+    async findSuperUserByUsername(_, args){
+      let { username } = args;
+      const result = await SuperUserModel.findOne({ username: username});
+      return result;
     }
   },
   Mutation: {

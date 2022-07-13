@@ -15,4 +15,4 @@ const SuperUserSchema = new mongoose.Schema({
   }
 });
 
-export const SuperUserModel = mongoose.model('SuperUser', SuperUserSchema);
+export const SuperUserModel = mongoose.models.SuperUser || mongoose.model('SuperUser', SuperUserSchema);

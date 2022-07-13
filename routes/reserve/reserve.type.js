@@ -4,15 +4,16 @@ export const ReserveType = gql(
   `type Reserve {
     _id: ID!
     houseId: ID!,
-    commonfundId: ID!,
-    payed: Boolean
-    date: Date
+    periodId: ID!,
+    transactionId: ID!
+    createdAt: Date
   }
 
   input ReserveInput {
-    name: String,
-    username: String,
-    password: String
+    houseId: ID,
+    periodId: ID,
+    transactionId: ID
+    createdAt: Date
   } 
 
   type Query {
@@ -24,5 +25,6 @@ export const ReserveType = gql(
     addReserve(input: ReserveInput!): Reserve
     updateReserve(_id: ID!, input: ReserveInput!): Reserve
     deleteReserve(_id: ID!): Reserve
+    
   }`
 );

@@ -23,6 +23,17 @@ const Query = {
 const Mutation = {
   async addPeriod(_, args){
     let { input } = args;
+    const ocupied = await PeriodModel.find({
+      commonfieldId: input.commonfieldId,
+      startDate: {
+        $gte: input.startDate,
+        $lt: input.endDate,
+      },
+      endDate: {
+        $gte: input.startDate,
+        $lt: input.endDate,
+      }
+    });
     const result = await PeriodModel.create(input);
     console.log(result);
     return result;
@@ -39,7 +50,7 @@ const Mutation = {
     return result;
   },
   async reservePeriod(_, args){
-    let { periodId, transactionId, houseId } = args;
+    let { periodId, houseId } = args;
     console.log(periodId, transactionId);
     const result = await ReserveModel.create({
       periodId: periodId,

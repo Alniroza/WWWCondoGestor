@@ -17,4 +17,4 @@ const CommonfundSchema = new mongoose.Schema({
   }
 });
 
-export const CommonfundModel = mongoose.model('Commonfund', CommonfundSchema);
+export const CommonfundModel = mongoose.models.Commonfund || mongoose.model('Commonfund', CommonfundSchema);
