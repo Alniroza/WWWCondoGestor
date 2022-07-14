@@ -15,7 +15,7 @@ const Query = {
   async authResident(_, args){
     let { username, password } = args;
     const result = await ResidentModel.findOne({ username: username });
-    if (result["password"] === password ){
+    if (result && result["password"] === password ){
       return true;
     }
     return false;

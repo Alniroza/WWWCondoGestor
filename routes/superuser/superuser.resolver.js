@@ -16,7 +16,7 @@ export const SuperUserResolver = {
     async authSuperUser(_, args){
       let { username, password } = args;
       const result = await SuperUserModel.findOne({ username: username });
-      if (result["password"] === password ){
+      if (result && result["password"] === password ){
         return true;
       }
       return false;
