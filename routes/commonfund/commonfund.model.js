@@ -12,9 +12,10 @@ const CommonfundSchema = new mongoose.Schema({
   detail: {
     type: String
   },
-  expirationDays: {
-    type: Number
-  }
+  expirationCycle: {
+    type: String
+  },
+
 });
 
 export const CommonfundModel = mongoose.models.Commonfund || mongoose.model('Commonfund', CommonfundSchema);

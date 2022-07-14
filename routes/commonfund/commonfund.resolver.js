@@ -1,5 +1,8 @@
 import mongoose from 'mongoose';
 import { CommonfundModel } from './Commonfund.model.js'
+import { TransactionModel } from '../transaction/transaction.model.js'
+
+const expirationFeePorcent = 0.05
 
 const Query = {
   async findOneCommonfund(_, args){
@@ -11,6 +14,11 @@ const Query = {
   async findAllCommonfund(){
     const result = await CommonfundModel.find({});
     return result
+  },
+  async findAllCommonfundByHouse(_, args){
+    let { houseId } = args 
+    const result = await CommonfundModel.find({ houseId: houseId });
+    return result;
   }
 }
 
@@ -31,6 +39,24 @@ const Mutation = {
     console.log(_id)
     const result = await CommonfundModel.findOneAndRemove({_id: mongoose.Types.ObjectId(_id)});
     return result;
+  },
+  async billCommonfund(_, args){
+    let { commonfundId } = args;
+    let commonfund = await CommonfundModel.findById(commonfundId);
+    if (commonfund){
+      let transaction = {
+        houseId: commonfund.houseId,
+        detail: `Cobro de Gasto comun de casa ${commonfund.houseId}.`,
+        reason: "commonfund",
+        amount: commonfund.amount,
+        payedAmount: 0,
+        expirationFeePorcent: expirationFeePorcent,
+        expirationCycle: "monthly"
+      }
+      transaction = await TransactionModel.create(transaction);
+      return transaction
+    }
+    return null;
   }
 }
 

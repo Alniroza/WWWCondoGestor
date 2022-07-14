@@ -19,6 +19,8 @@ export const ReserveType = gql(
   type Query {
     findOneReserve(_id: ID!): Reserve
     findAllReserve: [Reserve]  
+    findAllReservesByResident: [Reserve]
+    findAllReservesByCommonfield: [Reserve]
   }
 
   type Mutation {

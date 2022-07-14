@@ -6,25 +6,26 @@ export const CommonfundType = gql(
     houseId: ID!,
     amount: Int!,
     detail: String,
-    expirationDays: Int,
+    expirationCycle: String,
   }
 
   input CommonfundInput {
     houseId: ID!,
     amount: Int!,
     detail: String,
-    expirationDays: Int
+    expirationCycle: String
   }
 
   type Query {
     findOneCommonfund(_id: ID!): Commonfund
     findAllCommonfund: [Commonfund]  
-    findAllCommonfundByHouseID(houseId: ID!): [Commonfund]
+    findAllCommonfundByHouse(houseId: ID!): [Commonfund]
   }
 
   type Mutation {
     addCommonfund(input: CommonfundInput!): Commonfund
     updateCommonfund(_id: ID!, input: CommonfundInput!): Commonfund
     deleteCommonfund(_id: ID!): Commonfund
+    billCommonfund(commonfundId: ID!): Transaction
   }`
 );

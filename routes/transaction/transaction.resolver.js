@@ -42,7 +42,6 @@ const Mutation = {
     } else {
       return transaction;
     }
-
   },
 }
 

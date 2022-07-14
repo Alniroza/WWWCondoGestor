@@ -4,11 +4,10 @@ export const CommonfieldType = gql(
   `type Commonfield {
     _id: ID!,
     condominiumId: ID!,
-    name: String,
+    name: String!,
     description: String,
     period: String,
-    periodFee: Int,
-    fineFee:  Int
+    periodFee: Float!
   }
 
   input CommonfieldInput {
@@ -16,14 +15,13 @@ export const CommonfieldType = gql(
     name: String,
     description: String,
     period: String,
-    periodFee: Int,
-    fineFee:  Int
+    periodFee: Int
   } 
 
   type Query {
     findOneCommonfield(_id: ID!): Commonfield
     findAllCommonfield: [Commonfield]  
-    findAllCommonfieldByHouseID(house_id: ID!): [Commonfield]
+    findAllCommonfieldByCondominiumId(condominiumId: ID!): [Commonfield]
   }
 
   type Mutation {
