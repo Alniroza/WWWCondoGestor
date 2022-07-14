@@ -21,7 +21,7 @@ export const CommonfieldType = gql(
   type Query {
     findOneCommonfield(_id: ID!): Commonfield
     findAllCommonfield: [Commonfield]  
-    findAllCommonfieldByHouseID(house_id: ID!): [Commonfield]
+    findAllCommonfieldByCondominiumId(condominiumId: ID!): [Commonfield]
   }
 
   type Mutation {

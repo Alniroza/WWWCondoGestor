@@ -16,6 +16,11 @@ const Query = {
     let { residentId } = args;
     const result = await HouseModel.find({ residentsId: residentId })
     return result;
+  },
+  async findAllHousesByCondominium(_, args){
+    let { condominiumId } = args;
+    const result = await HouseModel.find({ condominiumId: condominiumId});
+    return result;
   }
 }
 

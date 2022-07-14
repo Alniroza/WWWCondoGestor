@@ -19,7 +19,7 @@ export const CommonfundType = gql(
   type Query {
     findOneCommonfund(_id: ID!): Commonfund
     findAllCommonfund: [Commonfund]  
-    findAllCommonfundByHouseID(houseId: ID!): [Commonfund]
+    findAllCommonfundByHouse(houseId: ID!): [Commonfund]
   }
 
   type Mutation {

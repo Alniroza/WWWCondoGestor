@@ -11,7 +11,16 @@ const Query = {
   async findAllReserve(){
     const result = await ReserveModel.find({});
     return result
-  }
+  },
+  async findAllReservesByResident(_,args){
+    let { residentId } = args
+    const result = await ReserveModel.find({ residentId: residentId });
+    return result
+  },/*
+  async findAllReservesByCommonfield(_, args){
+    let { commonfieldId } = args;
+    const result = await PeriodModel 
+  }*/
 }
 
 const Mutation = {

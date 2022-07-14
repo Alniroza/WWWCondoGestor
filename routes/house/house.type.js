@@ -18,6 +18,7 @@ export const HouseType = gql(
     findOneHouse(_id: ID!): House
     findAllHouse: [House]
     findAllHousesByResident: [House]
+    findAllHousesByCondominium: [House]
   }
 
   type Mutation {

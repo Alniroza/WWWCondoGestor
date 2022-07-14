@@ -14,6 +14,11 @@ const Query = {
   async findAllCommonfund(){
     const result = await CommonfundModel.find({});
     return result
+  },
+  async findAllCommonfundByHouse(_, args){
+    let { houseId } = args 
+    const result = await CommonfundModel.find({ houseId: houseId });
+    return result;
   }
 }
 
