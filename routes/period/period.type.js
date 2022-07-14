@@ -26,6 +26,6 @@ export const PeriodType = gql(
     addPeriod(input: PeriodInput!): Period
     updatePeriod(_id: ID!, input: PeriodInput!): Period
     deletePeriod(_id: ID!): Period
-    reservePeriod(houseId: ID!, periodId: ID!): Reserve
+    reservePeriod(houseId: ID!, periodId: ID!): Transaction
   }`
 );

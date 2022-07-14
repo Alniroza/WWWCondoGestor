@@ -4,21 +4,23 @@ export const TransactionType = gql(
   `type Transaction {
     _id: ID!
     houseId: ID!,
+    detail: String,
     reason: String!
     amount: Float!,
     payedAmount: Float!,
-    detail: String,
-    expirationDate: Date
+    expirationFee: Float
+    expirationCycle: String,
     createdAt: Date
   }
 
   input TransactionInput {
-    houseId: ID,
+    houseId: ID!,
+    detail: String,
     reason: String!
     amount: Float!,
     payedAmount: Float!,
-    detail: String,
-    expirationDate: Date
+    expirationFee: Float
+    expirationCycle: String,
     createdAt: Date
   } 
 

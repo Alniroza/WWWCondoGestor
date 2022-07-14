@@ -10,6 +10,9 @@ const TransactionSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  detail: {
+    type: String
+  },
   amount: {
     type: Number,
     required: true
@@ -18,11 +21,11 @@ const TransactionSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  detail: {
-    type: String
+  expirationFeePorcent: {
+    type: Number
   },
-  expirationDate: {
-    type: Date
+  expirationCycle: {
+    type: String
   }
 },
 {
