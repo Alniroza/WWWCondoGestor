@@ -1,8 +1,23 @@
 import mongoose from 'mongoose';
 import { CommonfundModel } from './Commonfund.model.js'
 import { TransactionModel } from '../transaction/transaction.model.js'
+import * as cron from 'node-cron'
 
 const expirationFeePorcent = 0.05
+
+console.log('Schedule bill commonfund every month on first day, at 0:00 ');
+cron.schedule(
+  '0 0 1 * * ', 
+  async () => {
+    console.log("Iniciando CRON")
+    const commonfunds = await CommonfundModel.find({}).lean();
+    commonfunds.forEach((commonfund) => {
+      console.log(commonfund);
+      let x = Mutation.billCommonfund('' ,{commonfundId: commonfund._id.toString()});
+    });
+  }
+);
+
 
 const Query = {
   async findOneCommonfund(_, args){
@@ -42,6 +57,7 @@ const Mutation = {
   },
   async billCommonfund(_, args){
     let { commonfundId } = args;
+    console.log(commonfundId)
     let commonfund = await CommonfundModel.findById(commonfundId);
     if (commonfund){
       let transaction = {

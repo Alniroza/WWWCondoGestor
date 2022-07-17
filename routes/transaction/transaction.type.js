@@ -5,10 +5,10 @@ export const TransactionType = gql(
     _id: ID!
     houseId: ID!,
     detail: String,
-    reason: String!
+    reason: String!,
     amount: Float!,
     payedAmount: Float!,
-    expirationFee: Float
+    expirationFee: Float,
     expirationCycle: String,
     createdAt: Date
   }
@@ -16,10 +16,10 @@ export const TransactionType = gql(
   input TransactionInput {
     houseId: ID!,
     detail: String,
-    reason: String!
+    reason: String!,
     amount: Float!,
     payedAmount: Float!,
-    expirationFee: Float
+    expirationFee: Float,
     expirationCycle: String,
     createdAt: Date
   } 

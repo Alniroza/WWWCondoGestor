@@ -6,11 +6,11 @@ const Query = {
     let { _id } = args;
     const result = await TransactionModel.findOne({_id: mongoose.Types.ObjectId(_id)});
     console.log(result);
-    return result.lean();
+    return result;
   },
   async findAllTransaction(){
     const result = await TransactionModel.find({});
-    return result.lean()
+    return result;
   }
 }
 
