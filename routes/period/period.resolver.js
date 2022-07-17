@@ -27,6 +27,13 @@ const Query = {
     const result = await PeriodModel.find({commonfieldId: commonfieldId});
     return result
   },
+  async findPeriodsById(_, args){
+    const { periodsId } = args;
+    const result = await PeriodModel.find({
+      _id: { $in: periodsId}
+    });
+    return result;
+  }
 }
 
 const Mutation = {

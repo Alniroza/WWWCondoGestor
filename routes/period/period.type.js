@@ -20,6 +20,7 @@ export const PeriodType = gql(
     findOnePeriod(_id: ID!): Period
     findAllPeriod: [Period]
     findAllPeriodByCommonfield(commonfieldId: ID!): [Period]
+    findPeriodsById(periodsId: [ID!]): [Period]
   }
 
   type Mutation {
