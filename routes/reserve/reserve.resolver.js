@@ -16,11 +16,7 @@ const Query = {
     let { residentId } = args
     const result = await ReserveModel.find({ residentId: residentId });
     return result
-  },/*
-  async findAllReservesByCommonfield(_, args){
-    let { commonfieldId } = args;
-    const result = await PeriodModel 
-  }*/
+  }
 }
 
 const Mutation = {

@@ -16,6 +16,13 @@ const Query = {
     let { condominiumId } = args;
     const result = await CommonfieldModel.find({condominiumId: condominiumId});
     return result
+  },
+  async findCommonfieldsById(_, args){
+    const { commonfieldsId } = args;
+    const result = await CommonfieldModel.find({
+      _id: { $in: commonfieldsId}
+    });
+    return result;
   }
 }
 
