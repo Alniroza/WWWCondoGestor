@@ -11,6 +11,12 @@ const Query = {
   async findAllTransaction(){
     const result = await TransactionModel.find({});
     return result;
+  },
+  async findAllTransactionByHouse(_, args){
+    let { houseId } = args
+    if (!houseId) return []
+    const result = await TransactionModel.find({ houseId: houseId });
+    return result;
   }
 }
 

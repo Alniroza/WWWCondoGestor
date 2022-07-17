@@ -19,7 +19,8 @@ const Query = {
   },
   async findAllHousesByCondominium(_, args){
     let { condominiumId } = args;
-    const result = await HouseModel.find({ condominiumId: condominiumId});
+    if (!condominiumId) return []
+    const result = await HouseModel.find({ condominiumId: mongoose.Types.ObjectId(condominiumId)});
     return result;
   }
 }

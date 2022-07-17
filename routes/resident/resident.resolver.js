@@ -9,7 +9,7 @@ const Query = {
     return result;
   },
   async findAllResident(){
-    const result = await ResidentModel.find({});
+    const result = await ResidentModel.find();
     return result
   },
   async authResident(_, args){
@@ -37,7 +37,8 @@ const Mutation = {
   },
   async updateResident(_, args){
     let { _id, input } = args;
-    const result = await ResidentModel.findOneAndUpdate({_id: mongoose.Types.ObjectId(_id)}, input);
+    await ResidentModel.findOneAndUpdate({_id: mongoose.Types.ObjectId(_id)}, input);
+    const result = ResidentModel.findOne({_id: mongoose.Types.ObjectId(_id)})
     return result;
   },
   async deleteResident(_, args){

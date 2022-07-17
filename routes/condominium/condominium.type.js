@@ -14,7 +14,8 @@ export const CondominiumType = gql(
 
   type Query {
     findOneCondominium(_id: ID!): Condominium
-    findAllCondominium: [Condominium]  
+    findAllCondominium: [Condominium]
+    findByOwnerIdCondominium(owner_id: ID!):[Condominium]
   }
 
   type Mutation {

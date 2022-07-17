@@ -29,6 +29,7 @@ const Query = {
   },
   async findPeriodsById(_, args){
     const { periodsId } = args;
+    if (!periodsId?.length) return [];
     const result = await PeriodModel.find({
       _id: { $in: periodsId}
     });

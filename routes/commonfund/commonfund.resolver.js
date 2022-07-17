@@ -31,7 +31,8 @@ const Query = {
     return result
   },
   async findAllCommonfundByHouse(_, args){
-    let { houseId } = args 
+    let { houseId } = args
+    if (!houseId) return [] 
     const result = await CommonfundModel.find({ houseId: houseId });
     return result;
   }

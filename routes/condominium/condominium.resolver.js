@@ -2,6 +2,13 @@ import mongoose from 'mongoose';
 import { CondominiumModel } from './condominium.model.js'
 
 const Query = {
+    async findByOwnerIdCondominium(_, args){
+    let { owner_id } = args;
+    if (!owner_id) return [];
+    const result = await CondominiumModel.find({owner_id: mongoose.Types.ObjectId(owner_id)});
+    console.log(result);
+    return result;
+  },
   async findOneCondominium(_, args){
     let { _id } = args;
     const result = await CondominiumModel.findOne({_id: mongoose.Types.ObjectId(_id)});
