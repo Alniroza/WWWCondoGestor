@@ -20,6 +20,7 @@ export const ReserveType = gql(
     findOneReserve(_id: ID!): Reserve
     findAllReserve: [Reserve]  
     findAllReservesByResident: [Reserve]
+    findAllReserveByHouse(houseId: ID!): [Reserve]
     findAllReservesByCommonfield: [Reserve]
   }
 

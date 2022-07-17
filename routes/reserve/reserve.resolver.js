@@ -8,6 +8,12 @@ const Query = {
     console.log(result);
     return result;
   },
+  async findAllReserveByHouse(_, args){
+    let { houseId } = args 
+    if (!houseId) return []
+    const result = await ReserveModel.find({ houseId: houseId });
+    return result;
+  },
   async findAllReserve(){
     const result = await ReserveModel.find({});
     return result

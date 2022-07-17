@@ -26,7 +26,8 @@ export const TransactionType = gql(
 
   type Query {
     findOneTransaction(_id: ID!): Transaction
-    findAllTransaction: [Transaction]  
+    findAllTransaction: [Transaction] 
+    findAllTransactionByHouse(houseId: ID!): [Transaction]
   }
 
   type Mutation {
