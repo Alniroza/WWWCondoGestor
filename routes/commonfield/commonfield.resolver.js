@@ -19,6 +19,7 @@ const Query = {
   },
   async findCommonfieldsById(_, args){
     const { commonfieldsId } = args;
+    if(!commonfieldsId?.length) return []
     const result = await CommonfieldModel.find({
       _id: { $in: commonfieldsId}
     });

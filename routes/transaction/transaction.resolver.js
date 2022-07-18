@@ -40,9 +40,9 @@ const Mutation = {
   },
   async payTransaction(_, args){
     let { transactionId, payedAmount } = args
-    let transaction = TransactionModel.findOne({_id: mongoose.Types.ObjectId(transactionId)})
-    if (transaction.amount > transaction.payedAmount + payedAmount){
-      transaction.amount += payedAmount;
+    let transaction = await TransactionModel.findOne({_id: mongoose.Types.ObjectId(transactionId)})
+    if (transaction.amount >= transaction.payedAmount + payedAmount){
+      transaction.payedAmount += payedAmount;
       transaction.save();
       return transaction;
     } else {

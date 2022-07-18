@@ -14,7 +14,10 @@ const Query = {
   },
   async findAllHousesByResident(_, args){
     let { residentId } = args;
-    const result = await HouseModel.find({ residentsId: residentId })
+    let result = await HouseModel.find({})
+    result = result.filter((house) => {
+      return house.residentsId.includes(residentId)
+    });
     return result;
   },
   async findAllHousesByCondominium(_, args){
